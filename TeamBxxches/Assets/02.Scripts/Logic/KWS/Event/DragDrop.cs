@@ -14,7 +14,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private Vector3 initialPos;
 
-    ///드래그 중일 때의 RectTransform
+    //Parent
+    private RectTransform parent;
+
+    //드래그 중일 때의 RectTransform
     private RectTransform draggingTransform;
 
     public int index;
@@ -25,6 +28,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         draggingTransform = (RectTransform)rectTransform.root.transform;
+        parent = (RectTransform)rectTransform.parent;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -79,7 +83,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private void SetNotDraggingTransform()
     {
-        transform.SetParent(rectTransform.parent);
+        transform.SetParent(parent);
         transform.SetSiblingIndex(index);
     }
 
