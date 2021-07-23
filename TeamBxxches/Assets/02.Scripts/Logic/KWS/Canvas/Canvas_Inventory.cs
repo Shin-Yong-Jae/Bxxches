@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Canvas_Inventory : MonoBehaviour
 {
-    const int playSound_Touch_Count = 2;
+    const int c_PlaySound_Touch_Count = 2;
+    const float c_Doubletouch_Delay_Time = 0.5f;
 
     [Header("Sprite - [해변 오브젝트 이미지들]")]
     public Sprite[] sprites;
@@ -28,6 +29,9 @@ public class Canvas_Inventory : MonoBehaviour
     public Canvas canvas { get; private set; }
 
     private bool isInventoryEnabled = true;
+    private bool isTimeLoop = false;
+    private float waitTime = 0f;
+    private int priorIndex = 0;
 
     private List<DragItem> list_DropItem = new List<DragItem>();
     private List<int> list_DropItem_TouchCount = new List<int>();
@@ -35,12 +39,14 @@ public class Canvas_Inventory : MonoBehaviour
     private void Awake()
     {
         StartCoroutine(Init_IE());
+        StartCoroutine(StartTimer());
     }
 
     private IEnumerator Init_IE()
     {
         InitButton();
-        Create_DragItem();
+        Init_List_DropItem_TouchCount();
+        Init_List_DragItem();
 
         yield return null;
     }
@@ -53,9 +59,31 @@ public class Canvas_Inventory : MonoBehaviour
     /// <param name="index"></param>
     private void OnClick_DragItem(int index)
     {
-        $"OnClick : {index}".LogError();
+        if(priorIndex == index)
+        {            
+            if (isTimeLoop)
+            {
+                list_DropItem_TouchCount[index]++;
 
-        list_DropItem_TouchCount[index]++;
+                if(list_DropItem_TouchCount[index] >= c_PlaySound_Touch_Count)
+                {
+                    list_DropItem_TouchCount[index] = 0;
+                    PlaySound(index);
+                }
+            }
+            else
+            {
+                list_DropItem_TouchCount[index] = 1;
+            }
+        }
+        else
+        {
+            list_DropItem_TouchCount[index] = 1;
+        }
+
+        isTimeLoop = true;
+
+        priorIndex = index;
     }
 
     /// <summary>
@@ -81,12 +109,24 @@ public class Canvas_Inventory : MonoBehaviour
     }
 
     /// <summary>
-    /// 드래그 아이템을 생성합니다.
+    /// 각 버튼 터치 카운트 초기화
     /// </summary>
-    private void Create_DragItem()
+    private void Init_List_DropItem_TouchCount()
     {
         list_DropItem_TouchCount.Clear();
-        list_DropItem_TouchCount = new List<int>(sprites.Length);
+        list_DropItem_TouchCount = new List<int>();
+
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            list_DropItem_TouchCount.Add(0);
+        }
+    }
+
+    /// <summary>
+    /// 드래그 아이템을 생성합니다.
+    /// </summary>
+    private void Init_List_DragItem()
+    {
 
         list_DropItem.Clear();
 
@@ -127,12 +167,37 @@ public class Canvas_Inventory : MonoBehaviour
     /// </summary>
     private void PlaySound(int index)
     {
-        
+        $"PlaySound : {index}".LogError();
     }
     
+    /// <summary>
+    /// 더블 버튼 클릭 체크
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator StartTimer()
     {
-        yield break;
+        waitTime = 0;
+
+        while(true)
+        {
+            if(isTimeLoop)
+            {
+                waitTime += Time.deltaTime;
+
+                if (waitTime >= c_Doubletouch_Delay_Time)
+                {
+                    waitTime = 0;
+                    isTimeLoop = false;
+                }
+            }
+
+            yield return null;
+        }
+    }
+    
+    private void ResetTime()
+    {
+        waitTime = 0;
     }
 
     #endregion
