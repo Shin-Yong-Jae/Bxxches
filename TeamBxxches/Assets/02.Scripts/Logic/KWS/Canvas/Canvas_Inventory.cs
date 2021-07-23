@@ -23,8 +23,8 @@ public class Canvas_Inventory : MonoBehaviour
     [Header("Animator_On_Off")]
     public Animator anim_OnOff;
 
-    [Header("Grid Layout Group")]
-    public GridLayoutGroup gridLayoutGroup;
+    //[Header("Grid Layout Group")]
+    //public GridLayoutGroup gridLayoutGroup;
 
     public Canvas canvas { get; private set; }
 
@@ -134,6 +134,7 @@ public class Canvas_Inventory : MonoBehaviour
         {
             var obj = Instantiate(dragItem, parent_DragItem);
             var dragItem_Com = obj.GetComponent<DragItem>();
+            dragItem_Com.index = i;
             list_DropItem.Add(dragItem_Com);
 
             var dragItem_Image = obj.GetComponent<Image>();

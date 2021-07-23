@@ -14,18 +14,27 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private Vector3 initialPos;
 
+    ///드래그 중일 때의 RectTransform
+    private RectTransform draggingTransform;
+
+    public int index;
+
     public virtual void Awake()
     {
         canvas = transform.root.GetComponent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        draggingTransform = (RectTransform)rectTransform.root.transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
-        StartDrag();
+        SavePriorPosition();
+
+        //부모 조정
+        SetDraggingTransform();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -37,7 +46,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         canvasGroup.alpha = 1.0f;
         canvasGroup.blocksRaycasts = true;
-        EndDrag();
+        ResetPosition();
+
+        SetNotDraggingTransform();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -47,17 +58,29 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     #region Private
 
-    private void StartDrag()
+    private void SavePriorPosition()
     {
         "드래그 시작 위치".LogError();
         initialPos = rectTransform.position;
 
     }
 
-    private void EndDrag()
+    private void ResetPosition()
     {
         "드래그 종료 위치".LogError();
         rectTransform.position = initialPos;
+    }
+
+    private void SetDraggingTransform()
+    {
+        transform.SetParent(draggingTransform);
+        transform.SetAsLastSibling();
+    }
+
+    private void SetNotDraggingTransform()
+    {
+        transform.SetParent(rectTransform.parent);
+        transform.SetSiblingIndex(index);
     }
 
     #endregion
