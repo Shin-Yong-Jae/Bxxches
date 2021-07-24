@@ -23,6 +23,6 @@ public class EditControl : MonoBehaviour
 
     public void GoMain()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainScene2");
     }
 }

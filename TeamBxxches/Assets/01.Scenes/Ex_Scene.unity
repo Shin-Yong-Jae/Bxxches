@@ -898,7 +898,7 @@ MonoBehaviour:
   EditButton: {fileID: 443529134}
   EditPage: {fileID: 1848340191}
   CloseEditButton: {fileID: 1660441968}
-  GoMainButton: {fileID: 0}
+  GoMainButton: {fileID: 1259941721}
 --- !u!114 &1120184610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,12 +992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbe0417972524e91bfc65dc4bf2e931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SoundSource:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   EntireVolume_Slider: {fileID: 1028757362}
 --- !u!1 &1158894726
 GameObject:

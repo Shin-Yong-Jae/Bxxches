@@ -36,48 +36,32 @@ public class SoundManager : MonoBehaviour
         {
             if(map_source.Contains(source))
             {
-                //
+                map_source.Remove(source);
             }
         }
     }
 
+    public void PlaySound() // AudioSource List 실행.
+    {
+        for(int i=0; i< map_source.Count; i++)
+        {
+            map_source[i].Play();
+        }
+    }
 
-    //public void PlaySound(string _name) // 곡 실행.
-    //{
-    //    for (int i = 0; i < Sounds.Length; i++) // 들어온 클립 수 만큼 실행.
-    //    {
-    //        if(_name == Sounds[i].name)
-    //        {
-    //            for (int j = 0; j < audioSource.Length; j++)// audiosource가 재생중이지 않다면.
-    //            {
-    //                if(!audioSource[j].isPlaying)
-    //                {
-    //                    audioSource[j].clip = Sounds[i].clip;
-    //                    audioSource[j].Play();
-    //                    return;
-    //                }
-    //            }
-    //            Debug.Log("AudioSource 모두 사용중");
-    //            return;
-    //        }
-    //    }
-    //    Debug.Log(_name + "등록되지 않은 Sound");
-    //}
+    public void StopAllSound() //리스트에서 빼 버리는게 맞나?
+    {
+        for(int i=0; i<map_source.Count; i++)
+        {
+            //map_source[i].Stop();
+            Remove_Source(map_source[i]);
+        }
+    }
 
-    //public void StopAllSound() // 모두 재생 멈춤.
-    //{
-    //    for (int i = 0; i < Sounds.Length; i++)
-    //    {
-    //        audioSource[i].Stop();
-    //    }
-    //}
+    public void SetEntireVolume()
+    {
 
-
-    //private void Start()
-    //{
-    //    audioSource = GetComponent<AudioSource>();
-    //}
-
+    }
 
     private void Update()
     {
