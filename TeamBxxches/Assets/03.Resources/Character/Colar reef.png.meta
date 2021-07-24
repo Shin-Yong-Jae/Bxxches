@@ -1,7 +1,79 @@
 fileFormatVersion: 2
 guid: 464e6f7083769e14f9fdac310e60e829
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -910951236781665665
+    second: Colar reef_0
+  - first:
+      213: -4061094190504863414
+    second: Colar reef_1
+  - first:
+      213: -4830982881362228461
+    second: Colar reef_2
+  - first:
+      213: 3187480683296123881
+    second: Colar reef_3
+  - first:
+      213: -4797191018283884809
+    second: Colar reef_4
+  - first:
+      213: -795134882576436426
+    second: Colar reef_5
+  - first:
+      213: -6237971340758938937
+    second: Colar reef_6
+  - first:
+      213: -2813099781158614463
+    second: Colar reef_7
+  - first:
+      213: -5840104724640943500
+    second: Colar reef_8
+  - first:
+      213: 5911919504990338651
+    second: Colar reef_9
+  - first:
+      213: 6026546520107949382
+    second: Colar reef_10
+  - first:
+      213: -6848308883061616399
+    second: Colar reef_11
+  - first:
+      213: -1806855526942811960
+    second: Colar reef_0
+  - first:
+      213: -1383142750887068618
+    second: Colar reef_1
+  - first:
+      213: 8114571367201970989
+    second: Colar reef_2
+  - first:
+      213: -1794413330178264166
+    second: Colar reef_3
+  - first:
+      213: 37661179192755765
+    second: Colar reef_4
+  - first:
+      213: -4354806967585753927
+    second: Colar reef_5
+  - first:
+      213: 8782859751837096002
+    second: Colar reef_6
+  - first:
+      213: -3334891832797542010
+    second: Colar reef_7
+  - first:
+      213: -8655436167805012523
+    second: Colar reef_8
+  - first:
+      213: 7926353450671092645
+    second: Colar reef_9
+  - first:
+      213: -7040012518369332734
+    second: Colar reef_10
+  - first:
+      213: 5885692075045219431
+    second: Colar reef_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +112,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +143,168 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Colar reef_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c85f1ca872cce6e0800000000000000
+      internalID: -1806855526942811960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colar reef_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c38bb0ff61ecce0800000000000000
+      internalID: -1383142750887068618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colar reef_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b11a66aafbc9070800000000000000
+      internalID: 8114571367201970989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colar reef_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93bf7a5596f817e0800000000000000
+      internalID: -1794413330178264166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colar reef_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5364b9794acc58000800000000000000
+      internalID: 37661179192755765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colar reef_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4b7afb22e9093c0800000000000000
+      internalID: -4354806967585753927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colar reef_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 67
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2485354296cf2e970800000000000000
+      internalID: 8782859751837096002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
