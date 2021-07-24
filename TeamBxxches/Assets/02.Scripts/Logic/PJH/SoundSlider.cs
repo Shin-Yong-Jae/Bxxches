@@ -34,9 +34,6 @@ public class SoundSlider : MonoBehaviour/*, IObserver*/
                 time = 0;
             }
         }
-
-        print(isClicked);
-        print(time);
     }
 
 

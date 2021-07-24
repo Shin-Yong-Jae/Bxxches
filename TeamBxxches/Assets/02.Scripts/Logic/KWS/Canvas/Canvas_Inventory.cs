@@ -8,8 +8,8 @@ public class Canvas_Inventory : MonoBehaviour
     const int c_PlaySound_Touch_Count = 2;
     const float c_Doubletouch_Delay_Time = 0.5f;
 
-    [Header("Sprite - [해변 오브젝트 이미지들]")]
-    public Sprite[] sprites;
+    [Header("[인벤토리 데이터]")]
+    public List<Inventory_Data> list_inventoryData;
 
     [Header("DragItem [드래그 아이템]")]
     public GameObject dragItem;
@@ -112,7 +112,7 @@ public class Canvas_Inventory : MonoBehaviour
         list_DropItem_TouchCount.Clear();
         list_DropItem_TouchCount = new List<int>();
 
-        for (int i = 0; i < sprites.Length; i++)
+        for (int i = 0; i < list_inventoryData.Count; i++)
         {
             list_DropItem_TouchCount.Add(0);
         }
@@ -126,7 +126,7 @@ public class Canvas_Inventory : MonoBehaviour
 
         list_DropItem.Clear();
 
-        for (int i = 0; i < sprites.Length; i++)
+        for (int i = 0; i < list_inventoryData.Count; i++)
         {
             var obj = Instantiate(dragItem, parent_DragItem);
             var dragItem_Com = obj.GetComponent<DragItem>();
@@ -156,7 +156,7 @@ public class Canvas_Inventory : MonoBehaviour
     /// <param name="index"></param>
     private void SetSprite(Image image, int index)
     {
-        image.sprite = sprites[index];
+        image.sprite = list_inventoryData[index].sprite;
     }
 
     /// <summary>
@@ -198,4 +198,12 @@ public class Canvas_Inventory : MonoBehaviour
     }
 
     #endregion
+}
+
+[System.Serializable]
+
+public class Inventory_Data
+{
+    public Sprite sprite;
+    public AudioClip audioClip;
 }
