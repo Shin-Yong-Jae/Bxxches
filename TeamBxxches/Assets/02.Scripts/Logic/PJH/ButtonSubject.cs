@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IObserver
+public interface IObserver //옵저버 패턴 인터페이스
 {
     void Updated();
 }
 
-public class ButtonSubject : MonoBehaviour
+public class ButtonSubject : MonoBehaviour //옵저버 패턴 subject
 {
     private List<IObserver> observers = new List<IObserver>();
 

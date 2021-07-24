@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundSlider : MonoBehaviour/*, IObserver*/
+public class SoundSlider : MonoBehaviour/*, IObserver*/ //팝업창 만드는 클래스
 {
     [SerializeField] GameObject soundBar;
     [SerializeField] AudioSource audioSource;
@@ -38,7 +38,6 @@ public class SoundSlider : MonoBehaviour/*, IObserver*/
         print(isClicked);
         print(time);
     }
-
 
     public void SoundBar()
     {

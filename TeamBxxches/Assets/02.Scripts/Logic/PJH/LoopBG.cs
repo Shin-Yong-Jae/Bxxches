@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopBG : MonoBehaviour
+public class LoopBG : MonoBehaviour //배경 이동시키는 클래스
 {
     [SerializeField] Transform startTransform;
     

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShakingStuff : MonoBehaviour
+public class ShakingStuff : MonoBehaviour //오브젝트 흔드는 클래스
 {
     Transform pos;
 
