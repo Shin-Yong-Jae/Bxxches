@@ -27,8 +27,6 @@ public class Canvas_Inventory : MonoBehaviour
     //public GridLayoutGroup gridLayoutGroup;
 
     public Canvas canvas { get; private set; }
-
-    private bool isInventoryEnabled = true;
     private bool isTimeLoop = false;
     private float waitTime = 0f;
     private int priorIndex = 0;
@@ -89,10 +87,8 @@ public class Canvas_Inventory : MonoBehaviour
     /// <summary>
     /// On/Off 버튼 클릭
     /// </summary>
-    private void OnClick_Button_On_Off()
+    public void OnClick_Button_On_Off()
     {
-        isInventoryEnabled = !isInventoryEnabled;
-
         anim_OnOff.SetTrigger("tr_OnOff");
     }
 

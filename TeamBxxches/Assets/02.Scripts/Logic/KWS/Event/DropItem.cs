@@ -19,11 +19,13 @@ public class DropItem : MonoBehaviour, IDropHandler
             $"Get".LogError();
             GameObject obj = eventData.pointerDrag;
             RectTransform rt = ((RectTransform)obj.transform);
+            ((RectTransform)obj.transform).SetParent(rectTransform);
+
             DragItem dragItem = obj.GetComponent<DragItem>();
             Destroy(dragItem);
 
-            ((RectTransform)obj.transform).SetParent(rectTransform);
-            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            DropItem dropItem = GetComponent<DropItem>();
+            dropItem.enabled = false;
         }
     }
 }
