@@ -46,6 +46,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        canvas_Inventory.OnClick_Button_On_Off();
+
         InGameSoundManager.Instance.Stop_Sound();
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;

@@ -74,7 +74,8 @@ public class DropItem : MonoBehaviour, IDropHandler
 
     private void SetAudioClip(AudioClip clip)
     {
-        dropInfo.SetAudioClip(clip, index);
+        $"Drop Index : {dropItemIndex}".LogError();
+        dropInfo.SetAudioClip(clip, dropItemIndex);
     }
 
     #endregion

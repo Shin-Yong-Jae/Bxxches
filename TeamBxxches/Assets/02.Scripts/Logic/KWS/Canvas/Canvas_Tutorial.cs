@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Canvas_Tutorial : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class Canvas_Tutorial : MonoBehaviour
 
     private void Init()
     {
-        popup_InGame.transform.localScale = new Vector3(0, 0, 0);
-        popup_Inventory.transform.localScale = new Vector3(0, 0, 0);
+        popup_InGame.transform.eulerAngles = new Vector3(0, 90, 0);
+        popup_Inventory.transform.eulerAngles = new Vector3(0, 90, 0);
+
     }
 
     private IEnumerator Awake_Coroutine()
@@ -57,8 +59,8 @@ public class Canvas_Tutorial : MonoBehaviour
 
     public void Tutorial_End_Finish()
     {
-        popup_InGame.transform.localScale = new Vector3(1, 1, 1);
-        popup_Inventory.transform.localScale = new Vector3(1, 1, 1);
+        popup_InGame.transform.eulerAngles = new Vector3(0, 0, 0);
+        popup_Inventory.transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
     #region Private
