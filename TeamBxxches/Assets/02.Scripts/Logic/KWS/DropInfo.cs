@@ -39,6 +39,7 @@ public class DropInfo : MonoBehaviour
     public void SetImage_Sprite(int index)
     {
         image.sprite = canvas_InGame.list_CharacterInfo[index].sprite;
+        image.SetNativeSize();
     }
 
     #region Private
