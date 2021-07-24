@@ -19,7 +19,7 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Play_Sound_OneShot(AudioClip clip)
     {
-        if(sfx_Source != null)
+        if (sfx_Source != null)
         {
             sfx_Source.Stop();
             sfx_Source.clip = clip;
@@ -40,7 +40,7 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Stop_Sound()
     {
-        if(sfx_Source != null)
+        if (sfx_Source != null)
         {
             sfx_Source.Stop();
         }
@@ -58,7 +58,22 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Set_Character_Source(AudioSource source, int index)
     {
-        if(characterSource[index] != null)
+        //if (characterSource[index] != null)
+        //{
+        //    characterSource[index].Stop();
+        //}
+
+        //characterSource[index] = source;
+        //characterSource[index].loop = true;
+
+        StartCoroutine(CheckAudioTime(source, index));
+            
+        //characterSource[index].Play();
+    }
+
+    IEnumerator CheckAudioTime(AudioSource source, int index)
+    {
+        if (characterSource[index] != null)
         {
             characterSource[index].Stop();
         }
@@ -66,6 +81,17 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
         characterSource[index] = source;
         characterSource[index].loop = true;
 
-        characterSource[index].Play();
+        while (true)
+        {
+            foreach (var item in characterSource)
+            {
+                if (item.clip.length - item.time == item.clip.length)
+                {
+                    characterSource[index].Play();
+                    print("실행");
+                    yield break;
+                }
+            }
+        }
     }
 }
