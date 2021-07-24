@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 74712b7eec037c94ea5a73ed324b6275, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3164034916873125663}
   m_HandleRect: {fileID: 1647622163160966023}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4ab341128ad54e343b5ad562f009c7f6, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -357,7 +357,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00006473934, y: 0}
   m_SizeDelta: {x: 0, y: 235.58044}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &5609521549777308329
@@ -565,13 +565,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5a878f5b2eba374489a1918536acc219, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -616,8 +616,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -805.63, y: 149}
-  m_SizeDelta: {x: 308.75, y: 95}
+  m_AnchoredPosition: {x: 0, y: 133}
+  m_SizeDelta: {x: 215, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7939678659664040029
 CanvasRenderer:
@@ -646,8 +646,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: df054535c9783414289d4ce5cf15e2d4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -751,27 +751,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881b279bdb00913448bbb5c2312ebbd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
-  - {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
+  list_inventoryData:
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
+  - sprite: {fileID: 21300000, guid: 360a5d8bf3c7b8644a884592f8fb34fa, type: 3}
+    audioClip: {fileID: 8300000, guid: c34b542da083ebb44868098d23e3ff9d, type: 3}
   dragItem: {fileID: 9025241475643053791, guid: 7e3126064d8af9f44897e2ab31903861,
     type: 3}
   parent_DragItem: {fileID: 6226690214207149763}

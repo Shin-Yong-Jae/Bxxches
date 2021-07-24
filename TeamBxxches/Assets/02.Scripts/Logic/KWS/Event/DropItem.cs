@@ -62,6 +62,7 @@ public class DropItem : MonoBehaviour, IDropHandler
 
     private void SetImage_Sprite(int index)
     {
+        "[Set Sprite]".LogError();
         dropInfo.SetImage_Sprite(index);
     }
 

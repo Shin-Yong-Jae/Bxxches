@@ -38,9 +38,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         draggingTransform = (RectTransform)rectTransform.root.transform;
         parent = (RectTransform)rectTransform.parent;
         audioSource = GetComponent<AudioSource>();
-
-        audioSource.LogError();//
-
         audioClip = canvas_Inventory.list_inventoryData[index].audioClip;
         audioSource.clip = audioClip;
 
