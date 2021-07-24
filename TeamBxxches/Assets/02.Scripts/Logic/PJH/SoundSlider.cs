@@ -34,9 +34,6 @@ public class SoundSlider : MonoBehaviour/*, IObserver*/ //팝업창 만드는 �
                 time = 0;
             }
         }
-
-        print(isClicked);
-        print(time);
     }
 
     public void SoundBar()

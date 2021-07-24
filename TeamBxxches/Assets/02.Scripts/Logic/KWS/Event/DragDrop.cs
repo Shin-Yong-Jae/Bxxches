@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    private AudioClip audioClip;
 
     private Canvas canvas = null;
 
@@ -13,6 +14,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
 
     private Vector3 initialPos;
+
+    private AudioSource audioSource;
+
+    private Canvas_Inventory canvas_Inventory;
+
+    public EItemType eItemType;
 
     //Parent
     private RectTransform parent;
@@ -24,11 +31,20 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public virtual void Awake()
     {
+        canvas_Inventory = GameObject.Find("Popup_Inventory").GetComponent<Canvas_Inventory>();
         canvas = transform.root.GetComponent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         draggingTransform = (RectTransform)rectTransform.root.transform;
         parent = (RectTransform)rectTransform.parent;
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.LogError();//
+
+        audioClip = canvas_Inventory.list_inventoryData[index].audioClip;
+        audioSource.clip = audioClip;
+
+        SetItemType(EItemType.Before_Drag);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -58,6 +74,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnPointerDown(PointerEventData eventData)
     {
 
+    }
+
+    public void SetItemType(EItemType eType)
+    {
+        eItemType = eType;
     }
 
     #region Private
