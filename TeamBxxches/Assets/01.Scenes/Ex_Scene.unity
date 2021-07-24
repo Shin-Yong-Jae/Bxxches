@@ -899,6 +899,7 @@ MonoBehaviour:
   EditPage: {fileID: 1848340191}
   CloseEditButton: {fileID: 1660441968}
   GoMainButton: {fileID: 1259941721}
+  slider: {fileID: 0}
 --- !u!114 &1120184610
 MonoBehaviour:
   m_ObjectHideFlags: 0
