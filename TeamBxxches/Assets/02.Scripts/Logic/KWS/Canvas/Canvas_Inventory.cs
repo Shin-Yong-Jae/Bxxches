@@ -130,9 +130,8 @@ public class Canvas_Inventory : MonoBehaviour
         {
             var obj = Instantiate(dragItem, parent_DragItem);
             var dragItem_Com = obj.GetComponent<DragItem>();
-            dragItem_Com.index = i;
             list_DropItem.Add(dragItem_Com);
-
+            dragItem_Com.index = i;
             var dragItem_Image = obj.GetComponent<Image>();
             var dragItem_Button = obj.GetComponent<Button>();
 
@@ -145,8 +144,6 @@ public class Canvas_Inventory : MonoBehaviour
             });
             SetSprite(dragItem_Image, i);
         }
-
-        //gridLayoutGroup.enabled = false;
     }
 
     /// <summary>
@@ -164,7 +161,7 @@ public class Canvas_Inventory : MonoBehaviour
     /// </summary>
     private void PlaySound(int index)
     {
-        $"PlaySound : {index}".LogError();
+        InGameSoundManager.Instance.Play_Sound_OneShot(list_inventoryData[index].audioClip);
     }
     
     /// <summary>

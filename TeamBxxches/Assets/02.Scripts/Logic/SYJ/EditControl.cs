@@ -10,6 +10,12 @@ public class EditControl : MonoBehaviour
     [SerializeField] GameObject EditPage;
     [SerializeField] Button CloseEditButton;
     [SerializeField] Button GoMainButton;
+    [SerializeField] Slider slider;
+
+    private void Awake()
+    {
+        StartCoroutine(UpdateCoroutine());
+    }
 
     public void OnClickEditButton()
     {
@@ -25,4 +31,20 @@ public class EditControl : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene2");
     }
+
+    #region Private
+
+    private IEnumerator UpdateCoroutine()
+    {
+        var soundManager = InGameSoundManager.Instance;
+
+        while (!InGameManager.Instance.isGameCleared)
+        {
+            soundManager.Set_Sound_Volume(slider.value);
+
+            yield return null;
+        }
+    }
+
+    #endregion
 }

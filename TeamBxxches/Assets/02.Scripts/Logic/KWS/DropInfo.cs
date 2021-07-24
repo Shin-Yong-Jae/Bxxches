@@ -10,6 +10,8 @@ public class DropInfo : MonoBehaviour
     Animator anim;
     Slider slider_Sound;
     Canvas_InGame canvas_InGame;
+    AudioSource audioSource;
+    DropItem dropItem;
 
 
     private void Awake()
@@ -18,6 +20,8 @@ public class DropInfo : MonoBehaviour
         button = GetComponent<Button>();
         anim = GetComponent<Animator>();
         slider_Sound = transform.GetChild(0).GetComponent<Slider>();
+        audioSource = GetComponent<AudioSource>();
+        dropItem = GetComponent<DropItem>();
         canvas_InGame = GameObject.Find("Popup_InGame").GetComponent<Canvas_InGame>();
         InitButton_OpenSound();
     }
@@ -40,6 +44,17 @@ public class DropInfo : MonoBehaviour
     {
         image.sprite = canvas_InGame.list_CharacterInfo[index].sprite;
         image.SetNativeSize();
+    }
+
+    public void SetAudioClip(AudioClip clip, int index)
+    {
+        audioSource.clip = clip;
+        InGameSoundManager.Instance.Set_Character_Source(audioSource, index);
+    }
+
+    public void ReleaseAudioClip()
+    {
+
     }
 
     #region Private

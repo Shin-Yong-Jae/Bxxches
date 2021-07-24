@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private AudioClip audioClip;
+    public AudioClip audioClip;
 
     private Canvas canvas = null;
 
@@ -15,9 +15,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private Vector3 initialPos;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
-    private Canvas_Inventory canvas_Inventory;
+    public Canvas_Inventory canvas_Inventory;
 
     public EItemType eItemType;
 
@@ -46,6 +46,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        InGameSoundManager.Instance.Stop_Sound();
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
         SavePriorPosition();

@@ -10,6 +10,17 @@ public class DragItem : DragDrop
         base.Awake();
     }
 
+    public int GetIndex()
+    {
+        $"Index :  : {index}".LogError();
+        return index;
+    }
+
+    public AudioClip GetAudioClip()
+    {
+        return canvas_Inventory.list_inventoryData[index].audioClip;
+    }
+
     #region Private
 
 

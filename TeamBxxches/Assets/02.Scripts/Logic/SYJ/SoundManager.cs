@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 public class SoundManager : MonoBehaviour
-{ 
+{
     static public SoundManager instanace;
     #region singleton
     void Awake()
@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour
 
     public void Add_Source(AudioSource source)
     {
-        if(map_source.Count < Config.c_Max_Character_Size)
+        if (map_source.Count < Config.c_Max_Character_Size)
         {
             map_source.Add(source);
         }
@@ -32,9 +32,9 @@ public class SoundManager : MonoBehaviour
 
     public void Remove_Source(AudioSource source)
     {
-        if(map_source.Count > 0)
+        if (map_source.Count > 0)
         {
-            if(map_source.Contains(source))
+            if (map_source.Contains(source))
             {
                 map_source.Remove(source);
             }
@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound() // AudioSource List 실행.
     {
-        for(int i=0; i< map_source.Count; i++)
+        for (int i = 0; i < map_source.Count; i++)
         {
             map_source[i].Play();
         }
@@ -51,24 +51,10 @@ public class SoundManager : MonoBehaviour
 
     public void StopAllSound() //리스트에서 빼 버리는게 맞나?
     {
-        for(int i=0; i<map_source.Count; i++)
+        for (int i = 0; i < map_source.Count; i++)
         {
             //map_source[i].Stop();
             Remove_Source(map_source[i]);
-        }
-    }
-
-    public void SetEntireVolume()
-    {
-
-    }
-
-    private void Update()
-    {
-        //임시 씬전환
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SceneManager.LoadScene("Ex_Scene");
         }
     }
 }
