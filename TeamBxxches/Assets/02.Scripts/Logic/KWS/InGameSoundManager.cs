@@ -7,8 +7,8 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
     private const int c_Character_Count = 6;
 
     private AudioSource sfx_Source;
-
-    [SerializeField] AudioSource[] characterSource = new AudioSource[c_Character_Count];
+    [SerializeField] List<AudioSource> characterSource = new List<AudioSource>();
+    //[SerializeField] AudioSource[] characterSource = new AudioSource[c_Character_Count];
 
     public float sound_volume = 0.5f;
 
@@ -19,7 +19,7 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Play_Sound_OneShot(AudioClip clip)
     {
-        if(sfx_Source != null)
+        if (sfx_Source != null)
         {
             sfx_Source.Stop();
             sfx_Source.clip = clip;
@@ -40,7 +40,7 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Stop_Sound()
     {
-        if(sfx_Source != null)
+        if (sfx_Source != null)
         {
             sfx_Source.Stop();
         }
@@ -58,14 +58,76 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Set_Character_Source(AudioSource source, int index)
     {
-        if(characterSource[index] != null)
+        //if (characterSource[index] != null)
+        //{
+        //    characterSource[index].Stop();
+        //}
+
+        //characterSource[index] = source;
+        //characterSource[index].loop = true;
+
+        StartCoroutine(CheckAudioTime(source, index));
+
+        //characterSource[index].Play();
+    }
+
+    IEnumerator CheckAudioTime(AudioSource source, int index)
+    {
+        if (characterSource[index] != null)
         {
             characterSource[index].Stop();
         }
 
         characterSource[index] = source;
-        characterSource[index].loop = true;
+        //characterSource[index].loop = true;
 
-        characterSource[index].Play();
+        while (true)
+        {
+            int allCount = 0;
+            int count = 0;
+
+            //foreach (var item in characterSource.)
+            {
+
+            }
+            for (int i = 0; i < c_Character_Count; i++)
+            {
+                if (characterSource[i].clip != null)
+                {
+                    allCount++;
+
+                    if (!characterSource[i].isPlaying)
+                    {
+                        count++;
+                        yield return null;
+                    }
+                }
+            }
+
+            if (count == allCount)
+            {
+                //foreach (var item in characterSource)
+                {
+
+                }
+                for (int i = 0; i < c_Character_Count; i++)
+                {
+                    characterSource[i].time = 0;
+                    characterSource[i].Play();
+                    yield break;
+                }
+                print("실행");
+            }
+        }
+    }
+
+    private void Update()
+    {
+        print(characterSource[0].clip);
+        print(characterSource[1].clip);
+        print(characterSource[2].clip);
+        print(characterSource[3].clip);
+        print(characterSource[4].clip);
+        print(characterSource[5].clip);
     }
 }
