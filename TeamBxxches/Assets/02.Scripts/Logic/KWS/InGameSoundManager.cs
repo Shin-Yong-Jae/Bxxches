@@ -7,8 +7,8 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
     private const int c_Character_Count = 6;
 
     private AudioSource sfx_Source;
-    [SerializeField] List<AudioSource> characterSource = new List<AudioSource>();
-    //[SerializeField] AudioSource[] characterSource = new AudioSource[c_Character_Count];
+    //[SerializeField] List<AudioSource> characterSource = new List<AudioSource>();
+    [SerializeField] AudioSource[] characterSource = new AudioSource[c_Character_Count];
 
     public float sound_volume = 0.5f;
 
@@ -86,10 +86,6 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
             int allCount = 0;
             int count = 0;
 
-            //foreach (var item in characterSource.)
-            {
-
-            }
             for (int i = 0; i < c_Character_Count; i++)
             {
                 if (characterSource[i].clip != null)
@@ -106,28 +102,23 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
             if (count == allCount)
             {
-                //foreach (var item in characterSource)
-                {
-
-                }
                 for (int i = 0; i < c_Character_Count; i++)
                 {
-                    characterSource[i].time = 0;
+                    characterSource[i].loop = true;
+                    //yield return new WaitForSeconds(0.1f);
+                    characterSource[i].loop = false;
                     characterSource[i].Play();
-                    yield break;
+                    yield return null;
+                    //yield break;
                 }
                 print("실행");
             }
+            yield return null;
         }
     }
 
     private void Update()
     {
-        print(characterSource[0].clip);
-        print(characterSource[1].clip);
-        print(characterSource[2].clip);
-        print(characterSource[3].clip);
-        print(characterSource[4].clip);
-        print(characterSource[5].clip);
+        print(characterSource[0].time);
     }
 }

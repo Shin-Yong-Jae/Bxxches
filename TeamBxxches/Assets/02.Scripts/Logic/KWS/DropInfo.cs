@@ -50,6 +50,9 @@ public class DropInfo : MonoBehaviour
     {
         audioSource.clip = clip;
         InGameSoundManager.Instance.Set_Character_Source(audioSource, index);
+        audioSource.LogError();
+        clip.LogError();
+        index.LogError();
     }
 
     public void ReleaseAudioClip()
