@@ -71,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c8d8cbe04126054b88dd9c8df6de364, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85fb01420f8a76c498b6b6f2ea872a27, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312bfbd6c8cc52b4f9b214a013c32ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropItemIndex: 0
 --- !u!114 &9102733901793542196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +296,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4835388754992516527}
     m_Modifications:
+    - target: {fileID: 1643751643069936076, guid: 102dcc487e98357499355d650edb02d0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643751643069936076, guid: 102dcc487e98357499355d650edb02d0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643751643069936076, guid: 102dcc487e98357499355d650edb02d0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643751643217562346, guid: 102dcc487e98357499355d650edb02d0,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643751643217562346, guid: 102dcc487e98357499355d650edb02d0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1643751644285995210, guid: 102dcc487e98357499355d650edb02d0,
         type: 3}
       propertyPath: m_LocalPosition.x
