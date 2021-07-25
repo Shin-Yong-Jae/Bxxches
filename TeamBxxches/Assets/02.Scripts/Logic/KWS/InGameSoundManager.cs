@@ -58,67 +58,83 @@ public class InGameSoundManager : SingletonMonoBase<InGameSoundManager>
 
     public void Set_Character_Source(AudioSource source, int index)
     {
-        //if (characterSource[index] != null)
-        //{
-        //    characterSource[index].Stop();
-        //}
-
-        //characterSource[index] = source;
-        //characterSource[index].loop = true;
-
-        StartCoroutine(CheckAudioTime(source, index));
-
-        //characterSource[index].Play();
-    }
-
-    IEnumerator CheckAudioTime(AudioSource source, int index)
-    {
         if (characterSource[index] != null)
         {
             characterSource[index].Stop();
         }
 
         characterSource[index] = source;
-        //characterSource[index].loop = true;
+        characterSource[index].loop = true;
 
-        while (true)
+        //StartCoroutine(CheckAudioTime(source, index));
+
+        characterSource[index].Play();
+
+        int enableCount = 0;
+
+        for(int i = 0; i < characterSource.Length; i++)
         {
-            int allCount = 0;
-            int count = 0;
-
-            for (int i = 0; i < c_Character_Count; i++)
+            if(characterSource[index] != null)
             {
-                if (characterSource[i].clip != null)
-                {
-                    allCount++;
-
-                    if (!characterSource[i].isPlaying)
-                    {
-                        count++;
-                        yield return null;
-                    }
-                }
+                enableCount++;
             }
+        }
 
-            if (count == allCount)
-            {
-                for (int i = 0; i < c_Character_Count; i++)
-                {
-                    characterSource[i].loop = true;
-                    //yield return new WaitForSeconds(0.1f);
-                    characterSource[i].loop = false;
-                    characterSource[i].Play();
-                    yield return null;
-                    //yield break;
-                }
-                print("실행");
-            }
-            yield return null;
+        if(enableCount == c_Character_Count)
+        {
+            //버튼 활성화
+            GameObject.Find("Canvas_InGame_UI").GetComponent<Canvas_InGameUI>().EnableButton();
         }
     }
 
-    private void Update()
-    {
-        print(characterSource[0].time);
-    }
+    //IEnumerator CheckAudioTime(AudioSource source, int index)
+    //{
+    //    if (characterSource[index] != null)
+    //    {
+    //        characterSource[index].Stop();
+    //    }
+
+    //    characterSource[index] = source;
+    //    //characterSource[index].loop = true;
+
+    //    while (true)
+    //    {
+    //        int allCount = 0;
+    //        int count = 0;
+
+    //        for (int i = 0; i < c_Character_Count; i++)
+    //        {
+    //            if (characterSource[i].clip != null)
+    //            {
+    //                allCount++;
+
+    //                if (!characterSource[i].isPlaying)
+    //                {
+    //                    count++;
+    //                    yield return null;
+    //                }
+    //            }
+    //        }
+
+    //        if (count == allCount)
+    //        {
+    //            for (int i = 0; i < c_Character_Count; i++)
+    //            {
+    //                characterSource[i].loop = true;
+    //                //yield return new WaitForSeconds(0.1f);
+    //                characterSource[i].loop = false;
+    //                characterSource[i].Play();
+    //                yield return null;
+    //                //yield break;
+    //            }
+    //            print("실행");
+    //        }
+    //        yield return null;
+    //    }
+    //}
+
+    //private void Update()
+    //{
+    //    print(characterSource[0].time);
+    //}
 }
